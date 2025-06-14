@@ -8,8 +8,8 @@ import { Topbar } from "./ui/topbar/main"
 const ChartLayout = ({children}:{children: React.ReactNode}) => {
 
     return (
-        <div className="grid grid-rows-[8%_92%_] grid-cols-[10%_80%_10%] h-screen">
-            <div className="col-span-3 bg-yellow-500">
+        <div className="grid grid-rows-[8%_92%_] grid-cols-[4%_92%_4%] h-screen">
+            <div className="col-span-3">
                 <Topbar />
             </div>
             <div className="bg-blue-400">
