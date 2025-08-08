@@ -384,7 +384,7 @@ const CandlestickChart = () => {
             </button>
           </div>
           
-          <div className="flex items-center gap-3 bg-white bg-opacity-10 px-4 py-2 rounded-full backdrop-blur-sm">
+          <div className="flex items-center gap-3 bg-white text-black bg-opacity-10 px-4 py-2 rounded-full backdrop-blur-sm">
             <label>Timeframe:</label>
             <select
               value={timeframe}
@@ -434,7 +434,7 @@ const CandlestickChart = () => {
           </div>
         </div>
 
-        <div className="text-center italic opacity-80">
+        <div className="text-center text-black italic opacity-80">
           Click "Draw Trendline" then click and drag on the chart to draw trendlines. Hover over candles to see OHLC data.
         </div>
       </div>

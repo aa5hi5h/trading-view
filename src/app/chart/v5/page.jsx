@@ -872,7 +872,7 @@ const TradingChart = () => {
   ];
 
   return (
-    <div className="w-full h-screen bg-gray-900 text-white flex flex-col">
+    <div className="w-full h-screen bg-white text-white flex flex-col">
       {/* Toolbar */}
       <div className="bg-gray-800 p-4 border-b border-gray-700">
         <div className="flex items-center justify-between">
@@ -928,7 +928,7 @@ const TradingChart = () => {
           <>
             <canvas
               ref={canvasRef}
-              className="w-full h-full"
+              className="w-full bg-white h-full"
               style={{ width: '100%', height: '100%', cursor: cursorStyle }}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}

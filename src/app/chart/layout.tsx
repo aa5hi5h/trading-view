@@ -15,9 +15,9 @@ const ChartLayout = ({children}:{children: React.ReactNode}) => {
             <div className="bg-blue-400">
                 <LeftSideBar />
             </div>
-            <div className="bg-pink-500 grid grid-rows-[92%_8%_]">
-                <div className="grid bg-green-500 grid-rows-[92%_8%_]">
-                    <div className="bg-teal-400">{children}</div>
+            <div className=" grid grid-rows-[92%_8%_]">
+                <div className="grid grid-rows-[92%_8%_]">
+                    <div className="">{children}</div>
                     <div className="bg-orange-500"><ChartTimeFrame /></div>
                 </div>
                 <div className="bg-emerald-500"><BottomBar /></div>
