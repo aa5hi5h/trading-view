@@ -1,9 +1,9 @@
-import { CandlestickData } from "lightweight-charts";
 import { BollingerBand } from "../renders/indicator";
 import { SMA } from "./sma";
+import { Candle } from "../data/sample-data";
 
 export class BollingerBands {
-  static calculate(data: CandlestickData[], period: number = 20, stdDev: number = 2): BollingerBand[] {
+  static calculate(data: Candle[], period: number = 20, stdDev: number = 2): BollingerBand[] {
     const sma = SMA.calculate(data, period);
     
     return data.map((_, index) => {

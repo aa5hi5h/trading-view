@@ -1,7 +1,7 @@
-import { CandlestickData } from "lightweight-charts";
+import { Candle } from "../data/sample-data";
 
 export class EMA {
-  static calculate(data: CandlestickData[], period: number): number[] {
+  static calculate(data: Candle[], period: number): number[] {
     const ema: number[] = [];
     const multiplier = 2 / (period + 1);
     

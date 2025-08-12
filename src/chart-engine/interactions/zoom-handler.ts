@@ -1,6 +1,7 @@
-import { Viewport } from "next";
+
 import { InteractionHandler } from "./main";
 import { CordinateSystem } from "../utils/cordinate-system";
+import { Viewport } from "../core/viewport";
 
 export class ZoomHandler implements InteractionHandler {
   private viewport: Viewport;
