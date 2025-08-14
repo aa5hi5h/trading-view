@@ -14,6 +14,11 @@ export class CandleStickRenderer{
         data: Candle[],
         viewWindow: ViewWindowProps
     ): void {
+        console.log('CandlestickRenderer.render called:', {
+    dataLength: data.length,
+    viewWindow: viewWindow,
+    coordinateSystem: this.cordinateSystem
+  });
         const visibleData = data.slice(viewWindow.start, viewWindow.end)
         if(visibleData.length === 0) return;
 

@@ -11,10 +11,12 @@ export interface InteractionHandler {
 export class InteractionManager extends EventEmitter {
   private handlers: InteractionHandler[] = [];
   private canvas: HTMLCanvasElement;
+  private cordinateSytem: CordinateSystem
 
-  constructor(canvas: HTMLCanvasElement) {
+  constructor(canvas: HTMLCanvasElement, cordinateSystem: CordinateSystem) {
     super();
     this.canvas = canvas;
+    this.cordinateSytem = cordinateSystem
     this.setupEventListeners();
   }
 
@@ -70,7 +72,7 @@ export class InteractionManager extends EventEmitter {
   }
 
   private getCoordinateSystem(): CordinateSystem {
-    throw new Error('CoordinateSystem needs to be provided to InteractionManager');
+    return  this.cordinateSytem
   }
 
   destroy(): void {

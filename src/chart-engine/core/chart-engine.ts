@@ -64,12 +64,12 @@ private crosshairRenderer: CrosshairRenderer;
     this.coordinateSystem = new CordinateSystem(
       chartDimensions,
       { min: 0, max: 100 },
-      { start: 0, end: 100 },
+      { start: 0, end: 10 },
       padding
     );
 
     this.drawingManager = new DrawingManager();
-    this.interactionManager = new InteractionManager(canvas);
+    this.interactionManager = new InteractionManager(canvas, this.coordinateSystem);
 
     // Initialize renderers
     this.candlestickRenderer = new CandleStickRenderer(this.coordinateSystem);

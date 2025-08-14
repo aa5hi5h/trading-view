@@ -1,6 +1,10 @@
 import { PriceRangeProps, ViewWindowProps } from "../utils/cordinate-system";
 import { EventEmitter } from "../utils/event-emitter";
 
+export interface ViewportState{
+  viewWindow: ViewWindowProps,
+  priceRange: PriceRangeProps
+}
 
 export class Viewport extends EventEmitter {
 
@@ -12,10 +16,7 @@ export class Viewport extends EventEmitter {
         super()
         this.dataLength = dataLength
 
-        this.viewWindow = {
-            start: Math.max(0, dataLength - initialVisibleCount),
-            end: dataLength
-        }
+         this.viewWindow = { start: 0, end: Math.max(10, dataLength) };
         this.priceRange = {min: 0, max: 100};
     }
 

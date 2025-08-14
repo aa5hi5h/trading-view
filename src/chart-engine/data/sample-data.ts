@@ -16,7 +16,7 @@ export class SampleData{
 
         for(let i =0; i < days; i++ ){
             const date = new Date(startDate)
-            date.setDate(date.getDate() + 1)
+            date.setDate(date.getDate() + i)
 
             const volatility: number = 0.02
             const change: number = (Math.random() - 0.5) * volatility * price
