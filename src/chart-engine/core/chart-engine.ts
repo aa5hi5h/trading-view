@@ -17,6 +17,7 @@ import { EMA } from "../indicator/ema";
 import { BollingerBands } from "../indicator/bollinger-band";
 import { Viewport, ViewportState } from "./viewport";
 import { Candle } from "../data/sample-data";
+import { Drawing } from "../drawings";
 
 export interface ChartEngineOptions {
   width?: number;
@@ -69,6 +70,7 @@ private crosshairRenderer: CrosshairRenderer;
     );
 
     this.drawingManager = new DrawingManager();
+    this.drawingManager.initialize(canvas, this.coordinateSystem);
     this.interactionManager = new InteractionManager(canvas, this.coordinateSystem);
 
     // Initialize renderers
@@ -76,6 +78,22 @@ private crosshairRenderer: CrosshairRenderer;
     this.gridRenderer = new GridRenderer(this.coordinateSystem);
     this.indicatorRenderer = new IndicatorRender(this.coordinateSystem);
     this.crosshairRenderer = new CrosshairRenderer(this.coordinateSystem);
+
+    this.drawingManager.on('redrawRequested', () => {
+      this.render();
+    });
+
+    this.drawingManager.on('drawingAdded', () => {
+      this.render();
+    });
+
+    this.drawingManager.on('drawingRemoved', () => {
+      this.render();
+    });
+
+    this.drawingManager.on('drawingMoved', () => {
+      this.render();
+    });
 
     // Setup event listeners
     this.setupEventListeners();
@@ -209,5 +227,16 @@ private crosshairRenderer: CrosshairRenderer;
     }
     this.interactionManager.destroy();
     this.emit('destroyed');
+  }
+  public addDrawing(drawing: Drawing): void {
+    this.drawingManager.addDrawing(drawing);
+  }
+
+  public createTrendLine(startIndex: number, startPrice: number, endIndex: number, endPrice: number, options = {}) {
+    return this.drawingManager.createTrendLine(startIndex, startPrice, endIndex, endPrice, options);
+  }
+
+  public createHorizontalLine(price: number, options = {}) {
+    return this.drawingManager.createHorizontalLine(price, options);
   }
 }

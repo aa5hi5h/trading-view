@@ -9,6 +9,7 @@ export interface DrawingHandle {
 export interface DrawingOptions {
   color?: string;
   lineWidth?: number;
+  alpha?: number;
   fontSize?: number;
 } 
 
